@@ -1,4 +1,4 @@
-# User, Product Management, Contact APIs(email send notification), Create Variant and show variants.
+# Authentication, Product Uploading, email notification and create variant
 
 This project provides a basic API for user authentication and product management using Node.js, Express.js, and MongoDB. It includes endpoints for user sign-up, sign-in, and product operations.
 
