@@ -139,11 +139,13 @@ The request body should be in JSON format and include the following fields:
 **Example Request:**
 
 ```json
+
 {
-  "name": "John Doe",
-  "email": "johndoe@example.com",
-  "message": "Hello, this is a test message!"
+  "name": "Chetan Mendhe",
+  "email": "surajmendhe498@gmail.com",
+  "message": "I am interested in your web development services. Please provide more information."
 }
+
 ```
 **Response:**
 
