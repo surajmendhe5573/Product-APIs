@@ -6,11 +6,17 @@ This project provides a basic API for user authentication and product management
 
 - **User sign-up** and **sign-in** with JWT authentication
 
-- **Product Management**: Create and manage product details including name, category, code, description, size, wood type, finish type, and price.
+- **Add a Product**: Create and manage product details including name, category, code, description, size, wood type, finish type, and price.
 - **Retrieve Products**: Fetch a list of all products.
 - **Create variant**: Add a variant to an existing product.
 - **Show variant**:Display detailed information about the main product and its variants.
+- **Apply Discounts**: Apply a percentage discount to a product's price.
+- **Edit Products**: Edit product details and update images.
+- **Remove Products**: Soft delete (remove) products, making them invisible in the product list.
+- **Restore Products(Put Back)**: Restore previously removed products.
+- **Permanently Delete Products**: Permanently delete a product from the database.
 - **Send Notifications via email**
+
 
 
 # User API Endpoints 
@@ -116,6 +122,55 @@ Retrieves a list of all products from the database.
 - **200 OK:** Returns the main product and its associated variants.
 - **404 Not Found:** The specified main product was not found.
 - **500 Server Error:** An error occurred on the server.
+
+### Apply Discount to a Product
+**Method:** `PATCH`
+- **URL**: ` http://localhost:6000/api/product/:productId/discount`
+
+- **Description**: Applies a percentage discount to the product price.
+- **Request Body**:
+```
+{
+  "discountPercentage": 10
+}
+```
+- **Response**: Returns the updated product with the discounted price.
+
+### Edit a Product
+
+- **Endpoint**: `PUT /:productId/edit`
+- **Description**: Edits product details and updates images.
+- **Request Body**:
+  - `productName` (string): The name of the product.
+  - `productCategory` (string): The category of the product.
+  - `productCode` (string): The code of the product.
+  - `smallDescription` (string): A brief description of the product.
+  - `detailedDescription` (string): A detailed description of the product.
+  - `productSize` (string): The size of the product.
+  - `productWoodType` (string): The wood type of the product.
+  - `finishType` (string): The finish type of the product.
+  - `productPrice` (number): The price of the product.
+  - `images` (array of files): Array of images to upload (max 4).
+- **Response**: Returns the updated product.
+
+### Soft Delete (Remove) a Product
+
+- **Endpoint**: `PATCH /:productId/remove`
+- **Description**: Soft deletes a product, making it invisible in the product list.
+- **Response**: Returns the removed product.
+
+### Restore a Removed Product
+
+- **Endpoint**: `PATCH /:productId/restore`
+- **Description**: Restores a previously removed product.
+- **Response**: Returns the restored product.
+
+### Permanently Delete a Product
+
+- **Endpoint**: `DELETE /:productId/delete`
+- **Description**: Permanently deletes a product from the database.
+- **Response**: Returns a success message indicating that the product has been deleted.
+
 
 # Contact API Endpoint
 
