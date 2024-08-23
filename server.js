@@ -6,6 +6,7 @@ require('dotenv').config();
 const userRoute= require('./routes/userRoute');
 const productRoute= require('./routes/productRoute');
 const contactRoute= require('./routes/contactRoute');
+const reviewRoute= require('./routes/reviewRoutes');
 
 // middleware
 app.use(express.json());
@@ -37,3 +38,4 @@ mongoose.connect(MongoURL, {
   app.use('/api/user', userRoute);  // user route
   app.use('/api/product', productRoute);  // product route
   app.use('/api', contactRoute);   // contact route
+  app.use('/api/product', reviewRoute);  // review route
