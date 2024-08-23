@@ -1,4 +1,4 @@
-# Authentication, Product Uploading, email notification and create variant
+# Product Management Backend APIs
 
 This project provides a basic API for user authentication and product management using Node.js, Express.js, and MongoDB. It includes endpoints for user sign-up, sign-in, and product operations.
 
