@@ -1,4 +1,4 @@
-# Product Management Backend APIs
+# Product Management Kuka Backend APIs
 
 This project provides a basic API for user authentication and product management using Node.js, Express.js, and MongoDB. It includes endpoints for user sign-up, sign-in, and product operations.
 
@@ -18,6 +18,9 @@ This project provides a basic API for user authentication and product management
 - **Send Notifications via email**
 - **Add Review for a product:** Add a review to a product, including a star rating, description, and images.
 - **Retrieve Product reviews:** Retrieve all reviews associated with a product.
+- **Add Item to Cart**: Add products to a user's cart with specific variants and quantities.
+- **Retrieve Cart Items**: Fetch the cart items for a specific user, including product details and variants.
+
 
 
 
@@ -238,6 +241,37 @@ The request must be sent as form-data and include the following fields:
   - `200 OK` - Returns an array of reviews
   - `404 Not Found` - No reviews found for this product
   - `500 Internal Server Error` - Server error
+
+
+  # Cart API Endpoints
+
+### Add Item to Cart
+
+- **URL**: `http://localhost:6000/api/cart/add`
+- **Method**: `POST`
+- **Description**: Adds a product to the user's cart. If the product with the specified variant already exists in the cart, the quantity is updated.
+
+**Request Body**:
+```json
+{
+  "userId": "string",
+  "productId": "string",
+  "variantId": "string", // Optional
+  "quantity": "number"
+}
+
+```
+
+### Retrieve Cart Items
+
+- **URL:** `http://localhost:6000/api/cart/:userId`
+- **Method:** `GET`
+- **Description:** Retrieves the cart items for the specified user.
+
+#### URL Parameters
+
+- **userId**: The ID of the user whose cart is being retrieved.
+
 
 
 
