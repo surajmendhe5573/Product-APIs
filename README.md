@@ -1,4 +1,4 @@
-# Authentication, Product Uploading, email notification and create variant
+# Product Management Backend APIs
 
 This project provides a basic API for user authentication and product management using Node.js, Express.js, and MongoDB. It includes endpoints for user sign-up, sign-in, and product operations.
 
@@ -16,6 +16,8 @@ This project provides a basic API for user authentication and product management
 - **Restore Products(Put Back)**: Restore previously removed products.
 - **Permanently Delete Products**: Permanently delete a product from the database.
 - **Send Notifications via email**
+- **Add Review for a product:** Add a review to a product, including a star rating, description, and images.
+- **Retrieve Product reviews:** Retrieve all reviews associated with a product.
 
 
 
@@ -210,6 +212,33 @@ The request body should be in JSON format and include the following fields:
 }
 ```
 
+# Review Product EndPoints
+## Add a review to a product.
+
+#### POST `http://localhost:6000/api/product/:productId/review`
+
+The request must be sent as form-data and include the following fields:
+
+
+  - `stars` (Number) - The rating of the product (1-5)
+  - `reviewDescription` (String) - The description of the review
+- `images`: Up to 4 image files
+
+- **Response**: 
+  - `201 Created` - Returns a success message and the created review
+  - `404 Not Found` - Product not found
+  - `500 Internal Server Error` - Server error
+
+  ## Retrieve all reviews for a product.
+
+#### GET `http://localhost:6000/api/product/:productId/reviews`
+
+
+- **Response**:
+  - `200 OK` - Returns an array of reviews
+  - `404 Not Found` - No reviews found for this product
+  - `500 Internal Server Error` - Server error
+
 
 
 ## Set Up Environment Variables
@@ -225,3 +254,6 @@ SecretKey=your_jwt_secret_key
 
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-email-password
+
+
+
