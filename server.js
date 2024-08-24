@@ -7,6 +7,7 @@ const userRoute= require('./routes/userRoute');
 const productRoute= require('./routes/productRoute');
 const contactRoute= require('./routes/contactRoute');
 const reviewRoute= require('./routes/reviewRoutes');
+const cartRoute= require('./routes/cartRoute');
 
 // middleware
 app.use(express.json());
@@ -39,3 +40,4 @@ mongoose.connect(MongoURL, {
   app.use('/api/product', productRoute);  // product route
   app.use('/api', contactRoute);   // contact route
   app.use('/api/product', reviewRoute);  // review route
+  app.use('/api/cart', cartRoute);  // cart route
