@@ -20,6 +20,11 @@ This project provides a basic API for user authentication and product management
 - **Retrieve Product reviews:** Retrieve all reviews associated with a product.
 - **Add Item to Cart**: Add products to a user's cart with specific variants and quantities.
 - **Retrieve Cart Items**: Fetch the cart items for a specific user, including product details and variants.
+- **Create new coupon codes**
+- **Retrieve all coupon codes or a specific coupon by code**
+- **Update existing coupon codes (e.g., mark as invalid, change expiry date)**
+- **Delete coupon codes**
+
 
 
 
@@ -288,7 +293,7 @@ This is a Node.js and Express application that provides an API for managing coup
 
 ### 1. Create a New Coupon
 
-- **URL**: `http://localhost:3000/api/coupons`
+- **URL**: `http://localhost:6000/api/coupons`
 - **Method**: `POST`
 - **Description**: Creates a new coupon.
 - **Request Body**:
@@ -309,7 +314,7 @@ This is a Node.js and Express application that provides an API for managing coup
 ```
 ### 2. Get All Coupons
 
-- **URL**: `http://localhost:3000/api/coupons`
+- **URL**: `http://localhost:6000/api/coupons`
 - **Method**: `GET`
 - **Description**: Retrieves all available coupons from the database.
 - **Response**:
@@ -318,7 +323,7 @@ This is a Node.js and Express application that provides an API for managing coup
 
 ### 3. Get a Coupon by Code
 
-- **URL**: `http://localhost:3000/api/coupons/:code`
+- **URL**: `http://localhost:6000/api/coupons/:code`
 - **Method**: `GET`
 - **Response**:
   - **200 OK**: Returns the coupon with the specified code.
@@ -332,7 +337,7 @@ GET /api/coupons/SAVE20
 
 ### 4. Update a Coupon
 
-**Endpoint:** `http://localhost:3000/api/coupons/:code`
+**Endpoint:** `http://localhost:6000/api/coupons/:code`
 - **Method**: `PUT`
 
 
@@ -348,7 +353,7 @@ The request body should contain the updated coupon details in JSON format. For e
 ```
 ### 5. Delete a Coupon
 
-**Endpoint:** `http://localhost:3000/api/coupons/:code`
+**Endpoint:** `http://localhost:6000/api/coupons/:code`
 - **Method**: `DELETE`
 
 
